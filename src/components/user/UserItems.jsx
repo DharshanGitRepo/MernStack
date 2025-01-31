@@ -17,7 +17,7 @@ export default function UserItems() {
       try {
         const endpoint = activeTab === 'listings' ? 'items' : 'rentals';
         const response = await axios.get(
-          `http://localhost:5000/api/users/${endpoint}`,
+          `https://mern-stack2-plum.vercel.app/api/users/${endpoint}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

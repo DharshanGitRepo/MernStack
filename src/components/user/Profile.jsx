@@ -42,7 +42,7 @@ export default function Profile() {
 
     try {
       const response = await axios.patch(
-        'http://localhost:5000/api/users/profile',
+        'https://mern-stack2-plum.vercel.app/api/users/profile',
         formData,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -69,7 +69,7 @@ export default function Profile() {
 
     try {
       await axios.patch(
-        'http://localhost:5000/api/users/change-password',
+        'https://mern-stack2-plum.vercel.app/api/users/change-password',
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword,

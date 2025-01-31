@@ -17,7 +17,7 @@ export default function ItemDetail() {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/items/${id}`, {
+        const response = await axios.get(`https://mern-stack2-plum.vercel.app/api/items/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setItem(response.data.data);
@@ -38,7 +38,7 @@ export default function ItemDetail() {
       endDate.setDate(endDate.getDate() + parseInt(rentDays));
 
       const response = await axios.patch(
-        `http://localhost:5000/api/items/${id}/rent`,
+        `https://mern-stack2-plum.vercel.app/api/items/${id}/rent`,
         { endDate },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -55,7 +55,7 @@ export default function ItemDetail() {
   const handleReturn = async () => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/items/${id}/return`,
+        `https://mern-stack2-plum.vercel.app/api/items/${id}/return`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
